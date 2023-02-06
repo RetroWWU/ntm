@@ -13,7 +13,14 @@ Package dependencies are os (https://docs.python.org/3/library/os.html), argpars
 ```zsh
 conda create -n ntm
 conda activate ntm
-[...]
+conda install -c etetoolkit ete3 
+```
+
+# Install NTM into conda environment (I assume that you have conda in $HOME/anaconda3 installed)
+```zsh
+wget -P $HOME/anaconda3/envs/ntm/bin https://raw.githubusercontent.com/RetroWWU/ntm/main/NTM.py
+wget -P $HOME/anaconda3/envs/ntm/bin https://raw.githubusercontent.com/RetroWWU/ntm/main/NTM_Functions.py
+chmod u+x $HOME/anaconda3/envs/ntm/bin/NTM.py
 ```
 
 # Usage
