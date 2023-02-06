@@ -17,7 +17,7 @@ conda install -c etetoolkit ete3
 ```
 
 # Install NTM into conda environment
-(I assume that you have conda in $HOME/anaconda3 installed)
+(I assume that you have conda installed in $HOME/anaconda3)
 ```zsh
 wget -P $HOME/anaconda3/envs/ntm/bin https://raw.githubusercontent.com/RetroWWU/ntm/main/NTM.py
 wget -P $HOME/anaconda3/envs/ntm/bin https://raw.githubusercontent.com/RetroWWU/ntm/main/NTM_Functions.py
