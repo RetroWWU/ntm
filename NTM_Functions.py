@@ -13,6 +13,7 @@ def read_input(input):
             string = file.read() 
     else:
         string = input
+
     return string
 
 '''
@@ -45,6 +46,7 @@ def reformat_list_headers(fasta_string):
 '''
 extract species names from FASTA file as list
 '''
+'''
 def get_fasta_species(fasta_path,format=0):
     
     species_list = []
@@ -54,6 +56,7 @@ def get_fasta_species(fasta_path,format=0):
                 species_list.append(line[1:-1])
         
     return species_list
+'''#removed in v1.2 because duplicated
 
 '''
 extract species names from FASTA string as list

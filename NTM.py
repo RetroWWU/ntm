@@ -53,6 +53,7 @@ if ">" in fasta_string:
 else:
     fasta_string = reformat_list_headers(fasta_string)
 
+
 #--------------------------------------------------------------------------------
 # SPECIES LIST
 #--------------------------------------------------------------------------------
@@ -61,8 +62,12 @@ if ">" in fasta_string:
     species_list = get_fasta_species(fasta_string)
 else:
     species_list = fasta_string.split("\n")
+    '''v1.1
     if species_list[-1] == "":
         species_list = species_list[:-1]
+    '''
+    species_list = [string for string in species_list if string != ""]#v1.2
+
 
 #--------------------------------------------------------------------------------
 # PRUNE TREE
