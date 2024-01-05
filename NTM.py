@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import sys
 from os import path
 from ete3 import Tree
 from NTM_Functions import *
@@ -39,8 +40,8 @@ tree_string = read_input(tree_input)
 try:
     tree = Tree(tree_string)
 except:
-    print("ERROR: Tree not readable by ete3.")
-    exit()
+    print("ERROR: Tree not readable by ete3.", file = sys.stderr)
+    exit(1)
     
 #--------------------------------------------------------------------------------
 # REFORMAT FASTA
@@ -78,6 +79,9 @@ if len(set(species_list)) < len(species_list):
 names = tree.get_leaf_names()
 species_diff = diff(species_list, names)
 species_list = intersection(names, species_list)
+if not species_list:
+    print("ERROR: There is no valid species or sequence given!", file = sys.stderr)
+    exit(1)
 fasta_string = adapt_fasta(fasta_string, species_list, removeduplicates)
 
 #--------------------------------------------------------------------------------
